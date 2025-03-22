@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Landing Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
+        .container { width: 80%; margin: auto; }
+        .header { background: #4CAF50; color: white; padding: 20px; }
+        .form-container { margin-top: 20px; padding: 20px; border: 1px solid #ddd; }
+        input, button { padding: 10px; margin: 10px; width: 80%; max-width: 300px; }
+        button { background: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Join Our Exclusive Event!</h1>
+        <p>Sign up now to reserve your spot.</p>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <input type="text" id="name" placeholder="Your Name" required><br>
+                <input type="email" id="email" placeholder="Your Email" required><br>
+                <button type="submit">Register</button>
+            </form>
+            <p id="confirmation" style="display:none; color: green;">Thank you for signing up!</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("signup-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("confirmation").style.display = "block";
+            document.getElementById("signup-form").reset();
+        });
+    </script>
+</body>
+</html>
