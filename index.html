@@ -3,39 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Landing Page</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
-        .container { width: 80%; margin: auto; }
-        .header { background: #4CAF50; color: white; padding: 20px; }
-        .form-container { margin-top: 20px; padding: 20px; border: 1px solid #ddd; }
-        input, button { padding: 10px; margin: 10px; width: 80%; max-width: 300px; }
-        button { background: #4CAF50; color: white; border: none; cursor: pointer; }
-        button:hover { background: #45a049; }
-    </style>
+    <title>Event Sign-Up</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional for styling -->
 </head>
 <body>
-    <div class="header">
-        <h1>Join Our Exclusive Event!</h1>
-        <p>Sign up now to reserve your spot.</p>
-    </div>
-    <div class="container">
-        <div class="form-container">
-            <h2>Sign Up</h2>
-            <form id="signup-form">
-                <input type="text" id="name" placeholder="Your Name" required><br>
-                <input type="email" id="email" placeholder="Your Email" required><br>
-                <button type="submit">Register</button>
+    <header>
+        <h1>Welcome to Our Event!</h1>
+        <p>Join us for an exciting event! Sign up below.</p>
+    </header>
+
+    <main>
+        <section class="signup-form">
+            <h2>Event Sign-Up Form</h2>
+            <form id="signupForm" action="https://formsubmit.co/your-email@gmail.com" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Why do you want to attend?</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html"> <!-- Redirect after submission -->
+
+                <button type="submit">Sign Up</button>
             </form>
-            <p id="confirmation" style="display:none; color: green;">Thank you for signing up!</p>
-        </div>
-    </div>
-    <script>
-        document.getElementById("signup-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            document.getElementById("confirmation").style.display = "block";
-            document.getElementById("signup-form").reset();
-        });
-    </script>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Event Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>
